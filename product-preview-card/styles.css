@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-primary: 'Fraunces', serif;
+  --spacing: 0.1rem;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: var(--cream);
+}
+
+.container {
+  width: 600px;
+  display: flex;
+  background: var(--clr-white);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hero-img{
+  content: url('images/image-product-desktop.jpg');
+  width: 300px;
+  height: 100%;
+}
+
+.description {
+  margin: 2rem;
+}
+
+.perfume, .heading, .price-section {
+  margin-bottom: 1.5rem;
+}
+
+.perfume {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+  letter-spacing: .1rem;
+}
+
+.heading {
+  font-family: 'Fraunces', serif;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.info {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  }
+
+.current-price {
+  font-family: 'Fraunces', serif;
+  color: var(--dark-cyan);
+}
+
+.orginal-price {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+}
+
+.add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  width: 100%;
+  background: var(--dark-cyan);
+  border: none;
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.add-to-cart:hover {
+  background: var(--very-dark-blue);
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 300px;
+    flex-direction: column;
+  }
+  .description {
+    margin: 1.5rem;
+  }
+  .hero-img {
+    width: 100%;
+    content: url('images/image-product-mobile.jpg');
+  }
+  .perfume, .heading, .price-section{
+    margin-bottom: 1rem;
+  }
+  .heading br {
+    display: none;
+  }
+}
